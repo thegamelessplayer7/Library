@@ -15,6 +15,21 @@
         <button id="new-book">NEW</button>
         <button id="inside-array">LIST</button>
     </div>
+    <div class="new-book-card" id="entry-form">
+        <form class="form-container">
+            <h1>New Book</h1>
+            <input type="text" placeholder="Title" name="title" required>
+            <input type="text" placeholder="Author" name="author" required>
+            <input type="number" placeholder="Pages" name="pages" required>
+            <label for="read"><b>Read it or nah?</b></label>
+            <select name="read-it" id="read-the-book">
+                <option value="sure-did">Sure Did</option>
+                <option value="nah">Nah</option>
+            </select>
+            <button type="submit" class="submit-btn">Submit</button>
+            <button type="close" class="close-btn" onclick="closeForm()">X</button>
+        </form>
+    </div>
     <p id='my-books'></p>
 </body>
 </html>
