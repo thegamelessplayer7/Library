@@ -5,8 +5,9 @@ function Book() {
 }
 
 function addBookToLibrary() {
-    let newBook = prompt('Add a new book to the library!');
-    myLibrary.push(newBook);
+    /*let newBook = prompt('Add a new book to the library!');
+    myLibrary.push(newBook);*/
+    openForm();
 }
 
 const newBookBtn = document.getElementById('new-book');
@@ -20,3 +21,11 @@ const insideArray = function() {
 
 const allMyBooks = document.getElementById('inside-array');
 allMyBooks.addEventListener('click', insideArray);
+
+function openForm() {
+    document.getElementById('entry-form').style.display = 'block';
+}
+
+const closeForm = function() {
+    document.getElementById('entry-form').style.display = 'none';
+}
