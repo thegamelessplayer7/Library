@@ -49,15 +49,21 @@ body {
 
 
 .new-book-card {
-    /*display: none;*/
-    
+    display: none;
     color: #ff0000;
     z-index: 9;
     background-color: #0c0c0c;
     text-transform: uppercase;
-    left: 50%;
     max-width: 300px;
-    margin: 0 auto;
+    /*margin: 0 auto;
+    top: 150px;
+    /*position: fixed;*/
+    position: absolute;
+top: 10;
+left: 0;
+right: 0;
+bottom: 0;
+margin: auto;
 }
 
 .form-container {
@@ -101,3 +107,10 @@ input:focus {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+/*
+.book-card {
+    background-color: white;
+    height: 180px;
+    width: 150px;
+}*/

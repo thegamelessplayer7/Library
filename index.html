@@ -18,11 +18,11 @@
     <div class="new-book-card" id="entry-form">
         <form class="form-container">
             <h1>New Book</h1>
-            <input type="text" placeholder="Title" name="title" required>
-            <input type="text" placeholder="Author" name="author" required>
-            <input type="number" placeholder="Pages" name="pages" required><br>
+            <input type="text" id="title" placeholder="Title" name="title" required>
+            <input type="text" id="author" placeholder="Author" name="author" required>
+            <input type="number" id="pages" placeholder="Pages" name="pages" required><br>
             <label for="read"><b>Read it or nah?</b></label><br>
-            <select name="read-it" id="read-the-book">
+            <select name="read" id="read-the-book">
                 <option value="sure-did">Sure Did</option>
                 <option value="nah">Nah</option>
             </select>
@@ -31,5 +31,8 @@
         </form>
     </div>
     <p id='my-books'></p>
+    <div class="book-card">
+
+    </div>
 </body>
 </html>

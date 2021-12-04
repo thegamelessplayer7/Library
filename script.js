@@ -1,31 +1,25 @@
 let myLibrary = [];
+let book;
 
-function Book() {
-
+function Book(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
 }
 
-function addBookToLibrary() {
-    /*let newBook = prompt('Add a new book to the library!');
-    myLibrary.push(newBook);*/
-    openForm();
+const getBook = document.getElementById('new-book');
+getBook.addEventListener('click', () => {
+    document.getElementById('entry-form').style.display='block';
+})
+
+function closeForm() {
+    document.getElementById('entry-form').style.display='none';
 }
 
-const newBookBtn = document.getElementById('new-book');
-newBookBtn.addEventListener('click', addBookToLibrary);
-
-const insideArray = function() {
-    myLibrary.forEach(function(item) {
-        document.getElementById('my-books').textContent += ` ${item}`;
-    })
-};
-
-const allMyBooks = document.getElementById('inside-array');
-allMyBooks.addEventListener('click', insideArray);
-
-function openForm() {
-    document.getElementById('entry-form').style.display = 'block';
-}
-
-const closeForm = function() {
-    document.getElementById('entry-form').style.display = 'none';
-}
+const form = document.querySelector('form');
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const book = new Book(event.target.title.value, event.target.author.value, event.target.pages.value, event.target.read.value)
+    myLibrary.push(book);
+})
