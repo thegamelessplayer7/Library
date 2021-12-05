@@ -1,5 +1,5 @@
 let myLibrary = [];
-let book;
+let book = '';
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -18,19 +18,30 @@ function closeForm() {
 }
 
 const form = document.querySelector('form');
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const book = new Book(event.target.title.value, event.target.author.value, event.target.pages.value, event.target.read.value)
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    book = new Book(e.target.title.value, e.target.author.value, e.target.pages.value, e.target.read.value)
     myLibrary.push(book);
     displayCard(myLibrary);
+    document.getElementById('entry-form').style.display='none';
+    //myLibrary = [];
 })
 
 const bodyDiv = document.getElementsByClassName('body-div');
 const para = document.getElementById('my-books')
 function displayCard(array) {
     for(i = 0; i < array.length; i++) {
+        // for each array value, we want to loop through
+        //the object key of the array, to determine what
+        //type of value it is, so that I can designate
+        //what HTML tag to give it (h2, p, etc)
         for (let x in array[i]) {
-        para.textContent += array[i][x];
+        //para.textContent += array[i][x];
+        //console.log(array[i]);
+        //console.log(array[i][x])
+            if(x === 'title') {
+                console.log(array[i][x]);
+            }
         }
     }
 }
