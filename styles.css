@@ -114,3 +114,18 @@ input:focus {
     height: 180px;
     width: 150px;
 }*/
+
+.card-div {
+    background-color: white;
+    text-transform: uppercase;
+    margin-top: 70px;
+    max-width: 300px;
+    margin-left: 50px;
+    /*position: absolute;*/
+}
+
+.card-inside-div {
+    max-width: 300px;
+    padding: 10px;
+    
+}

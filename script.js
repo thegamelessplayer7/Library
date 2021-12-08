@@ -1,49 +1,75 @@
 let myLibrary = [];
 let book = '';
 
-function Book(title, author, pages, read) {
+function Book(title, author, pages, hasRead) {
     this.title = title;
     this.author = author;
     this.pages = pages;
-    this.read = read;
+    this.hasRead = hasRead;
 }
 
-const getBook = document.getElementById('new-book');
-getBook.addEventListener('click', () => {
-    document.getElementById('entry-form').style.display='block';
+const openForm = document.getElementById('new-book');
+openForm.addEventListener('click', () => {
+    document.getElementById('entry-form').style.display = 'block';
 })
 
 function closeForm() {
-    document.getElementById('entry-form').style.display='none';
+    document.getElementById('entry-form').style.display = 'none';
 }
+
+const bodyDiv = document.getElementById('body-div');
+
+
+
+
 
 const form = document.querySelector('form');
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    book = new Book(e.target.title.value, e.target.author.value, e.target.pages.value, e.target.read.value)
-    myLibrary.push(book);
-    displayCard(myLibrary);
-    document.getElementById('entry-form').style.display='none';
-    //myLibrary = [];
-})
+    
+    
+    document.getElementById('entry-form').style.display = 'none';
 
-const bodyDiv = document.getElementsByClassName('body-div');
-const para = document.getElementById('my-books')
-function displayCard(array) {
-    for(i = 0; i < array.length; i++) {
-        // for each array value, we want to loop through
-        //the object key of the array, to determine what
-        //type of value it is, so that I can designate
-        //what HTML tag to give it (h2, p, etc)
-        for (let x in array[i]) {
-        //para.textContent += array[i][x];
-        //console.log(array[i]);
-        //console.log(array[i][x])
+    const title = e.target.title.value;
+    const author = e.target.author.value;
+    const pages = e.target.pages.value;
+    const hasRead = e.target.read.value;
+
+    book = new Book(title, author, pages, hasRead);
+    console.log(book.pages);
+    myLibrary.push(book);
+
+    let cardDiv = document.createElement('div');
+    bodyDiv.appendChild(cardDiv).className = 'card-div';
+    let cardInsideDiv = document.createElement('div');
+    cardDiv.appendChild(cardInsideDiv).className = 'card-inside-div';
+    let titleTag = document.createElement('h2');
+    cardInsideDiv.appendChild(titleTag);
+    let authorTag = document.createElement('p');
+    cardInsideDiv.appendChild(authorTag);
+    let pagesTag = document.createElement('p');
+    cardInsideDiv.appendChild(pagesTag);
+    let hasReadTag = document.createElement('p');
+    cardInsideDiv.appendChild(hasReadTag);
+
+    function displayCard(array) {
+        for(let x in array) {
             if(x === 'title') {
-                console.log(array[i][x]);
+                console.log(array[x]);
+                titleTag.textContent = (array[x]);
+            }
+            if (x === 'author') {
+                authorTag.textContent = (array[x]);
+            }
+            if (x === 'pages') {
+                pagesTag.textContent = `${(array[x])} pages`;
+            }
+            if (x === 'hasRead') {
+                hasReadTag.textContent = (array[x]);
             }
         }
     }
-}
+    displayCard(book);
+    
+})
 
-// Create card and append it to bodyDiv element
