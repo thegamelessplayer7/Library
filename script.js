@@ -49,13 +49,15 @@ form.addEventListener('submit', (e) => {
     cardInsideDiv.appendChild(pagesTag);
     const hasReadTag = document.createElement('p');
     cardInsideDiv.appendChild(hasReadTag);
-    const toggleInfo = document.createElement('p');
-    cardInsideDiv.appendChild(toggleInfo);
-    toggleInfo.textContent = '(click above to change the read status)';
-    toggleInfo.className = 'toggle-info';
+
     const deleteBtn = document.createElement('button');
     cardInsideDiv.appendChild(deleteBtn);
     deleteBtn.innerHTML = 'Delete';
+    const readStatus = document.createElement('button');
+    cardInsideDiv.appendChild(readStatus);
+    readStatus.innerHTML = 'Change Read Status';
+
+  
 
     deleteBtn.addEventListener('click', () => {
         cardDiv.style.display = 'none';
@@ -79,7 +81,7 @@ form.addEventListener('submit', (e) => {
         }
     }
 
-    hasReadTag.addEventListener('click', () => {
+    readStatus.addEventListener('click', () => {
         if(hasReadTag.textContent === 'nah') {
             hasReadTag.textContent = 'sure-did';
         } else if(hasReadTag.textContent === 'sure-did') {
