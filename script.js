@@ -33,6 +33,7 @@ form.addEventListener('submit', (e) => {
     const author = e.target.author.value;
     const pages = e.target.pages.value;
     const hasRead = e.target.read.value;
+    console.log(e.target.read.textContent);
 
     let book = new Book(title, author, pages, hasRead);
     myLibrary.push(book);
@@ -85,8 +86,8 @@ form.addEventListener('submit', (e) => {
 
     readStatus.addEventListener('click', () => {
         if(hasReadTag.textContent === 'Read it? nah') {
-            hasReadTag.textContent = 'Read it? sure-did';
-        } else if(hasReadTag.textContent === 'Read it? sure-did') {
+            hasReadTag.textContent = 'Read it? sure did';
+        } else if(hasReadTag.textContent === 'Read it? sure did') {
             hasReadTag.textContent = 'Read it? nah';
         }
     })
