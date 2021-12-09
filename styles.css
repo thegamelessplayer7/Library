@@ -173,3 +173,8 @@ margin-top: 20px;
 .read-status:hover{
     background-color: #f00f0f;
 }
+
+.close-btn {
+    margin-left: 260px;
+    margin-bottom: 0;
+}
