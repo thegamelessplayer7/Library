@@ -51,8 +51,21 @@ form.addEventListener('submit', (e) => {
     cardInsideDiv.appendChild(pagesTag);
     let hasReadTag = document.createElement('p');
     cardInsideDiv.appendChild(hasReadTag);
+    let toggleInfo = document.createElement('p');
+    cardInsideDiv.appendChild(toggleInfo);
+    toggleInfo.textContent = '(click above to change the read status)';
+    toggleInfo.className = 'toggle-info';
+    let deleteBtn = document.createElement('button');
+    cardInsideDiv.appendChild(deleteBtn);
+    deleteBtn.innerHTML = 'Delete';
+
+    deleteBtn.addEventListener('click', () => {
+        console.log('delete');
+        cardDiv.style.display = 'none';
+    })
 
     function displayCard(array) {
+        
         for(let x in array) {
             if(x === 'title') {
                 console.log(array[x]);
@@ -69,6 +82,14 @@ form.addEventListener('submit', (e) => {
             }
         }
     }
+
+    hasReadTag.addEventListener('click', () => {
+        if(hasReadTag.textContent === 'nah') {
+            hasReadTag.textContent = 'sure-did';
+        } else if(hasReadTag.textContent === 'sure-did') {
+            hasReadTag.textContent = 'nah';
+        }
+    })
     displayCard(book);
     
 })
