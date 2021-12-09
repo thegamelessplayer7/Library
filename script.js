@@ -49,15 +49,17 @@ form.addEventListener('submit', (e) => {
     cardInsideDiv.appendChild(pagesTag);
     const hasReadTag = document.createElement('p');
     cardInsideDiv.appendChild(hasReadTag);
+    
+    
+    const readStatus = document.createElement('button');
+    cardInsideDiv.appendChild(readStatus);
+    readStatus.className = 'read-status';
+    readStatus.innerHTML = 'Read Status';
 
     const deleteBtn = document.createElement('button');
     cardInsideDiv.appendChild(deleteBtn);
+    deleteBtn.className = 'delete-btn';
     deleteBtn.innerHTML = 'Delete';
-    const readStatus = document.createElement('button');
-    cardInsideDiv.appendChild(readStatus);
-    readStatus.innerHTML = 'Change Read Status';
-
-  
 
     deleteBtn.addEventListener('click', () => {
         cardDiv.style.display = 'none';
@@ -76,16 +78,16 @@ form.addEventListener('submit', (e) => {
                 pagesTag.textContent = `${(array[x])} pages`;
             }
             else if (x === 'hasRead') {
-                hasReadTag.textContent = (array[x]);
+                hasReadTag.textContent = `Read it? ${(array[x])}`;
             }
         }
     }
 
     readStatus.addEventListener('click', () => {
-        if(hasReadTag.textContent === 'nah') {
-            hasReadTag.textContent = 'sure-did';
-        } else if(hasReadTag.textContent === 'sure-did') {
-            hasReadTag.textContent = 'nah';
+        if(hasReadTag.textContent === 'Read it? nah') {
+            hasReadTag.textContent = 'Read it? sure-did';
+        } else if(hasReadTag.textContent === 'Read it? sure-did') {
+            hasReadTag.textContent = 'Read it? nah';
         }
     })
     displayCard(book);

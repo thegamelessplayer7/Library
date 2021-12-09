@@ -36,6 +36,11 @@ body {
 
 #new-book {
     margin-right: 20px;
+    margin-bottom: 40px;
+}
+
+#new-book:hover{
+    background-color: #f00f0f;
 }
 
 #inside-array {
@@ -121,11 +126,50 @@ input:focus {
     margin-top: 70px;
     max-width: 300px;
     margin-left: 50px;
+    color:rgb(63, 63, 63);
+    
+    
     /*position: absolute;*/
+
+    
+    text-transform: uppercase;
+    max-width: 300px;
+    /*margin: 0 auto;
+    top: 150px;
+    /*position: fixed;*/
+    
+top: 10;
+left: 0;
+right: 0;
+bottom: 0;
+margin: auto;
+margin-top: 20px;
 }
 
 .card-inside-div {
     max-width: 300px;
     padding: 10px;
+    text-align: center;
     
+}
+
+.delete-btn, .read-status {
+    background-color: #ff0000;
+    height: 40px;
+    width: 150px;
+    color: #dbdbdb;
+    font-size: 1em;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+}
+
+.delete-btn:hover{
+    background-color: #f00f0f;
+}
+
+.read-status:hover{
+    background-color: #f00f0f;
 }
