@@ -86,14 +86,14 @@ form.addEventListener('submit', (event) => {
     }
 
     readStatus.addEventListener('click', () => {
-        if(hasReadTag.textContent === 'Read it? nah') {
-            hasReadTag.textContent = 'Read it? sure did';
-        } else if(hasReadTag.textContent === 'Read it? sure did') {
-            hasReadTag.textContent = 'Read it? nah';
+        if(myLibrary[0]['hasRead'] === 'sure did') {
+            myLibrary[0]['hasRead'] = 'nah';
+        } else if(myLibrary[0]['hasRead'] === 'nah') {
+            myLibrary[0]['hasRead'] = 'sure did';
         }
     })
     displayCard(book);
-    document.getElementById('form-container').reset();
+    document.getElementById('entry-form').reset();
     
 })
 
