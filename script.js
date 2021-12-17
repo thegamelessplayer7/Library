@@ -23,20 +23,21 @@ const bodyDiv = document.getElementById('body-div');
 
 
 const form = document.querySelector('form');
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
     
     
     document.getElementById('entry-form').style.display = 'none';
 
-    const title = e.target.title.value;
-    const author = e.target.author.value;
-    const pages = e.target.pages.value;
-    const hasRead = e.target.read.value;
-    console.log(e.target.read.textContent);
+    const title = event.target.title.value;
+    const author = event.target.author.value;
+    const pages = event.target.pages.value;
+    const hasRead = event.target.read.value;
+
 
     let book = new Book(title, author, pages, hasRead);
     myLibrary.push(book);
+
 
     const cardDiv = document.createElement('div');
     bodyDiv.appendChild(cardDiv).className = 'card-div';
@@ -92,6 +93,7 @@ form.addEventListener('submit', (e) => {
         }
     })
     displayCard(book);
+    document.getElementById('form-container').reset();
     
 })
 
