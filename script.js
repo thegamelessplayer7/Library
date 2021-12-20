@@ -85,15 +85,23 @@ form.addEventListener('submit', (event) => {
         }
     }
 
-    readStatus.addEventListener('click', () => {
-        if(myLibrary[0]['hasRead'] === 'sure did') {
-            myLibrary[0]['hasRead'] = 'nah';
-        } else if(myLibrary[0]['hasRead'] === 'nah') {
-            myLibrary[0]['hasRead'] = 'sure did';
+  
+    const toggleReadStatus = () => {
+        for (let i = 0; i < myLibrary.length; i++) {
+            if(myLibrary[i].hasRead === 'sure did') {
+                myLibrary[i].hasRead = 'nah';
+            } else if (myLibrary[i].hasRead === 'nah') {
+                myLibrary[i].hasRead = 'sure did';
+            }
+            hasReadTag.textContent = myLibrary[i].hasRead;
         }
-    })
+    }
+
+    
+    readStatus.addEventListener('click', toggleReadStatus);
+
     displayCard(book);
-    document.getElementById('entry-form').reset();
+    document.getElementById('form-container').reset();
     
 })
 
