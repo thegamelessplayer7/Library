@@ -4,4 +4,4 @@ This is a library project that will be used to store book objects in arrays, whi
 
 I will also allow for the user to be able to delete data from the array, while being able to press a button to mark a book as read. 
 
-I will also attempt to store the data using JSON. 
+This site is published at https://thegamelessplayer7.github.io/Library/.
